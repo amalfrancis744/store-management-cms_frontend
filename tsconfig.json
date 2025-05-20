@@ -8,9 +8,15 @@
     ],
     "allowJs": true,
     "skipLibCheck": true,
+<<<<<<< HEAD
     "strict": false, // Disable all strict type checking
     "noImplicitAny": false, // Allow implicit 'any'
     "strictNullChecks": false,
+=======
+    "strict": false,  // Changed from true to false
+    "noImplicitAny": false,  // Add this
+    "strictNullChecks": false,  // Add this
+>>>>>>> f568f9332d66adb1c2684b611676b29ba52623a7
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
@@ -22,6 +28,7 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
+<<<<<<< HEAD
       "@/*": [
         "src/*"
       ]
@@ -31,6 +38,10 @@
         "name": "next"
       }
     ]
+=======
+      "@/*": ["src/*"]
+    }
+>>>>>>> f568f9332d66adb1c2684b611676b29ba52623a7
   },
   "include": [
     "next-env.d.ts",
@@ -38,7 +49,12 @@
     "**/*.tsx",
     ".next/types/**/*.ts"
   ],
+<<<<<<< HEAD
   "exclude": [
     "node_modules"
   ]
 }
+=======
+  "exclude": ["node_modules"]
+}
+>>>>>>> f568f9332d66adb1c2684b611676b29ba52623a7
