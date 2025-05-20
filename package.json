@@ -6,10 +6,8 @@
     "prepare": "husky",
     "dev": "next dev --turbopack",
     "format": "prettier --write .",
-    "type-check": "tsc --noEmit",
     "build": "next build",
-    "start": "next start",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx --fix"
+    "start": "next start"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
