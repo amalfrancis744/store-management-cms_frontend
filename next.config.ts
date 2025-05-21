@@ -14,6 +14,8 @@ const nextConfig: NextConfig = {
       'res.cloudinary.com',
       'images.unsplash.com',
       'media.istockphoto.com',
+      'res.cloudinary.com',
+
     ], // Allow images from google.com
   },
 };
