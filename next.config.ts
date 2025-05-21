@@ -1,36 +1,38 @@
-import type { NextConfig } from 'next';
-
-const nextConfig: NextConfig = {
-  /* config options here */
-
+const nextConfig = {
   images: {
-    domains: [
-      'google.com',
-      'example.com',
-      'media.istockphoto.com',
-      'amybakesbread.com',
-      'amybakesbread.com',
-      'images.pexels.com',
-      'res.cloudinary.com',
-      'images.unsplash.com',
-      'media.istockphoto.com',
-    ], // Allow images from google.com
+    domains: [], // domains is deprecated, use remotePatterns instead
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        port: '',
+        pathname: '/dnvqwu9v8/image/upload/**',
+      },
+      // Add other patterns as needed
+      {
+        protocol: 'https',
+        hostname: '**.istockphoto.com',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.pexels.com',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.amybakesbread.com',
+      },
+    ],
   },
-};
-
-export default nextConfig;
-
-module.exports = {
   typescript: {
-    // !! WARN !!
-    // Dangerously allow production builds to successfully complete even if
-    // your project has type errors.
-    // !! WARN !!
     ignoreBuildErrors: true,
   },
   eslint: {
-    // Warning: This allows production builds to successfully complete even if
-    // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
-}
+};
+
+module.exports = nextConfig;
