@@ -19,9 +19,10 @@ interface EncryptedResponse {
 
 export const authAPI = {
   // Login user
-  login: async (email: string, password: string) => {
+  login: async (email: string, password: string,fcmToken,platform,) => {
     try {
-      const encryptedPayload = encryptPayload({ email, password });
+      console.log('Login API called with:', { email, password,fcmToken,platform });
+      const encryptedPayload = encryptPayload({ email, password,fcmToken,platform });
       console.log('Encrypted Payload:', encryptedPayload);
       const response = await axiosInstance.post(
         '/auth/signin',

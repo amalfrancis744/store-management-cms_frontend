@@ -14,6 +14,9 @@ export const useNotifications = () => {
   const { notifications, unreadCount, isConnected, connectionAttempts } =
     useSelector((state: RootState) => state.socket);
 
+
+    console.log('useNotifications',notifications)
+
   /**
    * Dismiss a specific notification
    */

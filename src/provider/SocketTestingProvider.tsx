@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { RootState } from '@/store';
 import { useSocket } from '@/hooks/socket/useSocket';
 
-export default function NotificationProvider({
+export default function NotificationProviderSocket({
   children,
 }: {
   children: React.ReactNode;

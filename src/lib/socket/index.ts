@@ -1,6 +1,6 @@
 import { io, Socket } from 'socket.io-client';
 
-const SOCKET_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
+const SOCKET_URL = "https://back-end-861q.onrender.com";
 
 let socket: Socket | null = null;
 

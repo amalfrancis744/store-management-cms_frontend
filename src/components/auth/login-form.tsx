@@ -27,6 +27,7 @@ import {
   setWorkspaceId,
 } from '@/store/slices/authSlice';
 import { ToastContainer, toast } from 'react-toastify';
+import { useNotificationContext } from '@/provider/NotificationProvider';
 
 // Define the schema for form validation
 const loginSchema = z.object({
@@ -38,6 +39,13 @@ type LoginFormValues = z.infer<typeof loginSchema>;
 
 export function LoginForm() {
   const [showPassword, setShowPassword] = useState(false);
+
+
+  const { fcmToken } = useNotificationContext();
+
+
+  console.log('fcmToken', fcmToken);
+
   const router = useRouter();
   const dispatch = useAppDispatch();
   const { isLoading, error } = useAppSelector((state) => state.auth);
@@ -54,7 +62,7 @@ export function LoginForm() {
     try {
       // Start the login process
       const resultAction = await dispatch(
-        loginUser({ email: values.email, password: values.password })
+        loginUser({ email: values.email, password: values.password, fcmToken ,platform: 'web' })
       );
 
       if (loginUser.fulfilled.match(resultAction)) {
