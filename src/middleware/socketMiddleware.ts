@@ -89,14 +89,12 @@ export const socketMiddleware: Middleware = (store) => {
       store.dispatch(setConnected(false));
       
       if (!isExplicitDisconnect) {
-        toast.warning(`Disconnected: ${reason}`, { autoClose: 3000 });
         attemptReconnect();
       }
     });
 
     // Connection error
     socket.on('connect_error', (error: Error) => {
-      console.error('Socket connection error:', error.message);
       store.dispatch(setConnected(false));
       store.dispatch(setLastError(error.message));
       store.dispatch(incrementConnectionAttempts());
