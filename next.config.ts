@@ -16,7 +16,14 @@ const nextConfig: NextConfig = {
       'media.istockphoto.com',
       'res.cloudinary.com',
 
-    ], // Allow images from google.com
+    ],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        pathname: '/dnvqwu9v8/image/upload/**',
+      },
+    ],
   },
 };
 
@@ -24,15 +31,11 @@ export default nextConfig;
 
 module.exports = {
   typescript: {
-    // !! WARN !!
-    // Dangerously allow production builds to successfully complete even if
-    // your project has type errors.
-    // !! WARN !!
+  
     ignoreBuildErrors: true,
   },
   eslint: {
-    // Warning: This allows production builds to successfully complete even if
-    // your project has ESLint errors.
+  
     ignoreDuringBuilds: true,
   },
 }
